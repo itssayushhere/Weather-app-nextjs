@@ -15,19 +15,24 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  color: white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+/* Hide scrollbar while keeping the ability to scroll */
+.hidden-scrollbar {
+  overflow: -moz-scrollbars-none; /* For older Firefox versions */
+  scrollbar-width: none; /* For modern Firefox */
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none; /* For Webkit browsers */
 }
