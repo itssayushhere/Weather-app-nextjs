@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import icons from "./Icons";
 import { formatDate } from "@/utils/formatdate";
 
-const WeatherDisplay = ({ data }) => {
+const WeatherDisplay = ({ data ,unit}) => {
   const { currentConditions, days } = data;
   const currentHours = days[0];
   const next10days = days.slice(1, 11);
@@ -37,13 +37,13 @@ const WeatherDisplay = ({ data }) => {
               </div>
               <div className="flex text-9xl gap-0 text-white/85">
                 <h1>{currentConditions.temp.toFixed()}</h1>
-                <h1 className="text-xl">°C</h1>
+                <h1 className="text-xl">{unit}</h1>
               </div>
             </div>
             <div className="items-center flex flex-col justify-center">
               <div className="flex text-sm text-wrap opacity-55">
                 <h1>Feels like: {currentConditions.feelslike.toFixed()}</h1>
-                <h1 className="text-xs">°C</h1>
+                <h1 className="text-xs">{unit}</h1>
               </div>
               <h1 className="text-white/85">{currentConditions.conditions}</h1>
             </div>
@@ -89,7 +89,7 @@ const WeatherDisplay = ({ data }) => {
                 </div>
                 <h1 className="flex">
                   {items.temp}
-                  <span className="text-xs">°C</span>
+                  <span className="text-xs">{unit}</span>
                 </h1>
                 <h1 className="whitespace-nowrap">{items.precip} mm/h </h1>
                 <h1>{items.windspeed}🍃</h1>
@@ -114,7 +114,7 @@ const WeatherDisplay = ({ data }) => {
               </div>
               <h1 className="flex">
                 {items.temp}
-                <span className="text-xs">°C</span>
+                <span className="text-xs">{unit}</span>
               </h1>
               <h1 className="whitespace-nowrap">{items.precip} mm/h </h1>
               <h1>{items.windspeed}🍃</h1>
