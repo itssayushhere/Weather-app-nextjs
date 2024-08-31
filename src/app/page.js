@@ -13,6 +13,7 @@ export default function Home() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [units, setUnits] = useState("metric");
   const [unittypes, setUnittypes] = useState("°C,km");
+  const [error, setError] = useState("");
   const handlePopup = () => (
     <div className="p-1 bg-white flex rounded-lg gap-1">
       <button
@@ -65,10 +66,10 @@ export default function Home() {
         const result = await response.json();
         setData(result);
       } else {
-        console.log("Error:", response.statusText);
+        setError(`Error: ${response.statusText}`);
       }
     } catch (error) {
-      console.error("Fetch error:", error);
+      setError(`Fetch error: ${error.message}`);
     } finally {
       setLocation("");
       setLoading(false);
@@ -133,7 +134,6 @@ export default function Home() {
           )}
         </div>
       </div>
-
       {data && (
         <div>
           <WeatherDisplay data={data} />
