@@ -107,6 +107,14 @@ export default function Home() {
       </div>
     );
   }
+  if(error){
+    return (
+      <div className="flex min-h-screen items-center justify-center w-full gap-2">
+        <div className="bg-red-700 text-lg p-2 rounded-lg">{error}</div>
+        <button className="bg-red-700 text-lg p-2 rounded-lg mt-3">Reload</button>
+      </div>
+    )
+  }
 
   return (
     <main className="p-4">

@@ -24,8 +24,7 @@ export async function getLocation() {
   }
   
   async function getPlaceName(latitude, longitude) {
-    const apiKey = 'eb822974c3ae4b0bad82c9b235539984';
-    const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${process.env.NEXT_PUBLIC_Location_KEY}`;
   
     const response = await fetch(url);
     if (!response.ok) {
