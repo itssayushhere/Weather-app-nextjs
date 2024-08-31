@@ -140,7 +140,7 @@ export default function Home() {
             </button>
           </Dropdown>
         </form>
-        <div className="flex items-center gap-2 justify-between sm:flex-row flex-col mt-3 mx-3">
+        <div className={`flex items-center gap-2 ${data ? "justify-between": " justify-center"} sm:flex-row flex-col mt-3 w-full mx-auto`}>
           <div className="flex items-center gap-2">
             <FaLocationDot className="text-xl text-red-600" />
             <h1 className="flex-1 text-lg text-center text-gray-100 font-medium font-mono ">
