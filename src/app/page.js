@@ -92,6 +92,7 @@ export default function Home() {
       setError(`Fetch error: ${error.message}`);
     } finally {
       setLoading(false);
+      setLocation('')
     }
   };
 
@@ -109,9 +110,9 @@ export default function Home() {
   }
   if(error){
     return (
-      <div className="flex min-h-screen items-center justify-center w-full gap-2">
+      <div className="flex flex-col min-h-screen items-center justify-center w-full gap-2">
         <div className="bg-red-700 text-lg p-2 rounded-lg">{error}</div>
-        <button className="bg-red-700 text-lg p-2 rounded-lg mt-3">Reload</button>
+        <button className="bg-red-700 text-lg p-2 rounded-lg mt-3" onClick={()=>window.location.reload()}>Reload</button>
       </div>
     )
   }
