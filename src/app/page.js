@@ -66,7 +66,7 @@ export default function Home() {
       fetchData(currentLocation);
     } catch (error) {
       setError(`Error: ${error.message}`);
-      setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -79,7 +79,6 @@ export default function Home() {
     )}?unitGroup=${units}&iconSet=icons2&include=current%2Cdays%2Chours%2Calerts&key=${
       process.env.NEXT_PUBLIC_API_KEY
     }&contentType=json`;
-
     try {
       const response = await fetch(url);
       if (response.ok) {
